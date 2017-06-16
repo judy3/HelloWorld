@@ -1,0 +1,33 @@
+astring = "Hello world!" print("single quotes are ' '") print(len(astring))
+Output: 12 
+#to print out the string length
+
+astring = "Hello world!" print(astring.index("o"))
+Output: 4
+#to print out the location of the first occurrence of the letter "o", start from 0
+
+astring = "Hello world!" print(astring.count("l"))
+Output: 3
+# to print out the number of the l's in the string
+
+astring = "Hello world!" print(astring[3:7])
+Output: lo w
+# to print out a slice of the string, starting at index 3 and ending at index 6
+
+astring = "Hello world!" print(astring[3:7:2])
+Output: l
+#This prints the characters of string from 3 to 7 skipping one character
+
+astring = "Hello world!" print(astring[::-1])
+Output: !dlrow olleH
+#reverse a string 
+
+astring = "Hello world!" print(astring.upper()) print(astring.lower())
+#These make a new string with all letters converted to uppercase and lowercase, respectively
+
+astring = "Hello world!" print(astring.startswith("Hello")) print(astring.endswith("asdfasdfasdf"))
+Output: True False
+
+astring = "Hello world!" afewwords = astring.split(" ")  print(adewwords)
+Output: ['Hello', 'world!']
+# To splits a string into a bunch of string grouped together in a list

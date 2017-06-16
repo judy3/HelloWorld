@@ -1,0 +1,20 @@
+x = 2
+print(x == 2) # prints out True
+print(x == 3) # prints out False
+print(x < 3) # prints out True
+
+# the variable assignment is done using a single "="
+# comparison between two variables is done using the double equals operator "==". The "not equals" operator is marked as "!="
+
+# The "and" and "or" boolean operatiors
+
+name = "John"
+if name in ["John", "Rick"]:
+print("Your name is either John or Rick.")
+# the "in" operator could be used to check if a specific object exists within an iterable object container, such as a list
+
+print(not False) # Prints out True
+print((not False) == (False)) # Prints out False
+# Using "not" before a boolean expression inverts it
+
+
