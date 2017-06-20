@@ -1,0 +1,46 @@
+##Objects are an encapsulation of variables and functions into a single entity. Objects get their variables and functions from classes. Classes are essentially a template to create your objects.
+
+class MyClass:
+    variable = "blah"
+
+    def function(self):
+        print("This is a message inside the class.")
+
+myobjectx = MyClass()
+
+##to assign the above class(template) to an object
+
+class MyClass:
+    variable = "blah"
+
+    def function(self):
+        print("This is a message inside the class.")
+
+myobjectx = MyClass()
+
+myobjectx.variable
+myobjectx.function()
+
+##To access the variable inside of the newly created object "myobjectx"
+
+class MyClass:
+    variable = "blah"
+
+    def function(self):
+        print("This is a message inside the class.")
+
+myobjectx = MyClass()
+myobjecty = MyClass()
+
+myobjecty.variable = "yackity"
+
+# Then pring out both values
+print(myobjectx.variable)
+print(myobjecty.variable)
+
+##Output: blah
+yackity
+
+##You can create multiple different objects that are of the same class(have the same variables and functions defined). However, each object contains independent copies of the variables defined in the class. 
+
+
