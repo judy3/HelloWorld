@@ -1,1 +1,51 @@
-tomorrow continue
+phonebook = {}
+phonebook["John"] = 938477566
+phonebook["Jack"] = 938377264
+phonebook["Jill"] = 947662781
+print(phonebook)
+
+#Output: {'Jill': 947662781, 'John': 938477566, 'Jack': 938377264}
+## Using Key to address the vaule
+
+phonebook = {
+    "John" : 938477566,
+    "Jack" : 938377264,
+    "Jill" : 947662781
+}
+print(phonebook)
+#Output: {'Jill': 947662781, 'John': 938477566, 'Jack': 938377264}
+
+phonebook = {"John" : 938477566,"Jack" : 938377264,"Jill" : 947662781}
+for name, number in phonebook.items():
+    print("Phone number of %s is %d" % (name, number))
+
+#Output:Phone number of Jill is 947662781
+Phone number of John is 938477566
+Phone number of Jack is 938377264
+
+## Iterating over dictionaries
+
+phonebook = {
+   "John" : 938477566,
+   "Jack" : 938377264,
+   "Jill" : 947662781
+}
+del phonebook["John"]
+print(phonebook)
+
+#Output: {'Jill': 947662781, 'Jack': 938377264}
+
+## removing a value
+
+phonebook = {
+   "John" : 938477566,
+   "Jack" : 938377264,
+   "Jill" : 947662781
+}
+phonebook.pop("John")
+print(phonebook)
+
+#Output: {'Jill': 947662781, 'Jack': 938377264}
+## removing a value
+
+
