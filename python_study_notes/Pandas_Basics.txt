@@ -1,0 +1,51 @@
+Pandas is a high-level data manipulation tool developed by Wes McKinney. It is built on the Numpy package and its key data structure is called the DataFrame. DataFrames allow you to store and manipulate tabular data in rows of observations and columns of variables.
+
+There are several ways to create a DataFrame. One way way is to use a dictionary. 
+
+dict = {"country": ["Brazil", "Russia", "India", "China", "South Africa"],
+       "capital": ["Brasilia", "Moscow", "New Dehli", "Beijing", "Pretoria"],
+       "area": [8.516, 17.10, 3.286, 9.597, 1.221],
+       "population": [200.4, 143.5, 1252, 1357, 52.98] }
+
+import pandas as pd
+brics = pd.DataFrame(dict)
+print(brics)
+
+
+cars = pd.read_csv('cars.csv')
+
+# Print out cars
+print(cars)
+##Output:
+      cars_per_cap        country drives_right
+    US            809  United States         True
+    AUS           731      Australia        False
+    JAP           588          Japan        False
+    IN             18          India        False
+    RU            200         Russia         True
+    MOR            70        Morocco         True
+    EG             45          Egypt         True
+
+cars = pd.read_csv('cars.csv', index_col = 0)
+#print(cars)
+
+# Print out country column as Pandas Series
+print(cars['cars_per_cap'])
+
+# Print out country column as Pandas DataFrame
+print(cars[['cars_per_cap']])
+
+# Print out DataFrame with country and drives_right columns
+print(cars[['cars_per_cap', 'country']])
+
+# Print out first 4 observations
+print(cars[0:4])
+
+# Print out fifth and sixth observation
+print(cars[4:6])
+
+# Print out observation for Japan
+print(cars.iloc[2])
+
+# Print out observations for Australia and Egypt
+print(cars.loc[['AUS', 'EG']])
