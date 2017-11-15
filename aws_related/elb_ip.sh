@@ -2,6 +2,7 @@
 
 echo "USAGE: $0 load-balancer-name aws_profile"
 echo "OUTPUT FORMAT: EC2 ID :: IP"
+##This is used for: Get the instance IDs and IPs of an ELB
 
 PROFILE=${2:-"default"}
 ELB=$1
