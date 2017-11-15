@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo "USAGE EXAMPLE: $0 i-03e103abdff45b5cbi aws_profile"
+###This is used for: ssh to the Instance directly with the Instance ID
 
 PROFILE=${2:-"default"}
 INS_ID=$1
