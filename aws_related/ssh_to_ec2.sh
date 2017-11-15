@@ -1,13 +1,14 @@
 #!/bin/bash
 
 echo "USAGE EXAMPLE: $0 i-03e103abdff45b5cbi aws_profile"
-###This is used for: ssh to the Instance directly with the Instance ID
 
 PROFILE=${2:-"default"}
 INS_ID=$1
 
-PUB_IP=$(aws --profile $PROFILE ec2 describe-instances --instance-ids $INS_ID | jq -r '.Reservations[].Instances[].PublicIpAddress')
-KEY=$(aws --profile $PROFILE ec2 describe-instances --instance-ids $INS_ID | jq -r '.Reservations[].Instances[].KeyName')
+aws --profile $PROFILE ec2 describe-instances --instance-ids $INS_ID > ssh_info.json
+
+PUB_IP=$(cat ssh_info.json | jq -r '.Reservations[].Instances[].PublicIpAddress')
+KEY=$(cat ssh_info.json | jq -r '.Reservations[].Instances[].KeyName')
 KEYNAME=$(echo ${KEY}.pem)
 
 echo "ssh -i /home/judy/.ssh/keys/$KEYNAME ubuntu@$PUB_IP"
