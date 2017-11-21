@@ -17,6 +17,7 @@ import time
 
 print('Loading function')
 s3 = boto3.client('s3')
+sns = boto3.client('sns')
 
 def unzip(sourcezip, dest_dir):
     with zipfile.ZipFile(sourcezip) as zf:
@@ -29,8 +30,9 @@ def upload_to_s3(local_name, bucket, key):
         if os.path.isfile(local_file):
             print("uploading " + local_file)
             c_time=time.strftime("%Y%m%d")
-            s3_path="{}-{}/{}".format(key,c_time,f)
-            s3.upload_file(local_file, bucket, s3_path)
+            #s3_path="{}-{}/{}".format(key,c_time,f)
+            s3_path="{}".format(f)
+            s3.upload_file(local_file, bucket, s3_path,  ExtraArgs={'ACL':'public-read'})
 
 def handler(event, context):
     #print("Received event: " + json.dumps(event, indent=2))
@@ -51,3 +53,9 @@ def handler(event, context):
     bucket2="demo-jy2"
     print("uploading to {} ...".format(bucket2))
     upload_to_s3(path, bucket2, key)
+    
+    response = sns.publish(
+    TopicArn='arn:aws:sns:ap-southeast-1:accountnumberhere:topicnamehere',    
+    Message='The files has been uploaded, please check the management console.'
+    )
+    print("Response: {}".format(response))
