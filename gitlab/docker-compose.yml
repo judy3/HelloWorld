@@ -1,0 +1,16 @@
+web_gitlab:
+  image: 'registry.docker-cn.com/gitlab/gitlab-ce:latest'
+  restart: always
+  hostname: 'boostgitlab'
+  ports:
+    - '80:80'
+    - '443:443'
+    - '2289:22'
+  environment:
+    GITLAB_OMNIBUS_CONFIG: |
+      external_url 'http://boostgitlab'
+      gitlab_rails['gitlab_shell_ssh_port'] = 22
+  volumes:
+    - '/usr/local/src/gitlab/config:/etc/gitlab'
+    - '/usr/local/src/gitlab/logs:/var/log/gitlab'
+    - '/usr/local/src/gitlab/data:/var/opt/gitlab'
