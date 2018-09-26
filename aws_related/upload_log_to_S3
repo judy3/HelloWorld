@@ -9,7 +9,7 @@ APP="applicationName"
 S3_PATH="$S3_BUCKET/$APP"
 
 DATE=$(date "+%Y-%m-%d")
-LOG_DIR="???/pgsql/data/pg_log"
+LOG_DIR="???/pgsql/data/pg_log"    ##write the correct log dir
 LOG_NAME_TODAY="postgresql-$DATE"
 DATE_YESTERDAY=$( date -d "1 day ago" +"%Y-%m-%d")
 LOG_NAME_YESTERDAY="postgresql-$DATE_YESTERDAY"
