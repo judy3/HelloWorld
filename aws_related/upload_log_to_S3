@@ -1,0 +1,28 @@
+#!/bin/bash
+
+##enable postgres log and upload to S3 bucket(lifecycle)
+##Reference url: https://www.stigviewer.com/stig/postgresql_9.x/2017-01-20/finding/V-72923
+##enable crontab job twice a day
+
+S3_BUCKET="bucketname/foldername"
+APP="applicationName"
+S3_PATH="$S3_BUCKET/$APP"
+
+DATE=$(date "+%Y-%m-%d")
+LOG_DIR="???/pgsql/data/pg_log"
+LOG_NAME_TODAY="postgresql-$DATE"
+DATE_YESTERDAY=$( date -d "1 day ago" +"%Y-%m-%d")
+LOG_NAME_YESTERDAY="postgresql-$DATE_YESTERDAY"
+
+logs_yesterday=$(ls $LOG_DIR/ | grep $LOG_NAME_YESTERDAY)
+logs_today=$(ls $LOG_DIR/ | grep $LOG_NAME_TODAY)
+
+for log in $logs_yesterday
+do 
+    aws s3 cp $LOG_DIR/$log*  s3://$S3_PATH/
+done
+
+for log in $logs_today
+do 
+    aws s3 cp $LOG_DIR/$log*  s3://$S3_PATH/
+done
