@@ -1,0 +1,17 @@
+Background: 
+Different systems are using the API url that provided by AWS API GATEWAY whose the backend is a lamdba function. We use different stage to differentiate requester so that need to pass stage value to lambda function.
+Steps:
+1, config different stages in AWS API GATEWAY
+2, set up Mapping Templates in the Integration Request(API Gateway), examlpe:
+Content-Type: application/json
+{
+"parameterName": "$input.params('nspMarketId')",
+"stage" : "$context.stage"
+}
+3,After change any configuration don't forget to deploy the api again
+4,modify the lambda function, example in node.js:
+exports.handler = (event, context, callback) => {
+    console.log(JSON.stringify(event));
+	  console.log('no3 '+JSON.stringify(event.stage));
+
+the value of the event.stage is the value
