@@ -1,5 +1,6 @@
 Background: 
-Different systems are using the API url that provided by AWS API GATEWAY whose the backend is a lamdba function. We use different stage to differentiate requester so that need to pass stage value to lambda function.
+Different systems are using the API url that provided by AWS API GATEWAY whose the backend is a lamdba function. 
+We use different stage to differentiate requester so that need to pass stage value to lambda function.
 Steps:
 1, config different stages in AWS API GATEWAY
 2, set up Mapping Templates in the Integration Request(API Gateway), examlpe:
