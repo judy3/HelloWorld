@@ -16,3 +16,5 @@ exports.handler = (event, context, callback) => {
 	  console.log('no3 '+JSON.stringify(event.stage));
 
 the value of the event.stage is the value
+
+Ref: https://stackoverflow.com/questions/36181805/how-to-get-the-name-of-the-stage-in-an-aws-lambda-function-linked-to-api-gateway
