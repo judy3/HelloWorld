@@ -6,7 +6,7 @@ Steps:
 2, set up Mapping Templates in the Integration Request(API Gateway), examlpe:
 Content-Type: application/json
 {
-"parameterName": "$input.params('nspMarketId')",
+"parameterName": "$input.params('parametername')",
 "stage" : "$context.stage"
 }
 3,After change any configuration don't forget to deploy the api again
