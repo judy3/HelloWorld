@@ -26,7 +26,7 @@ def lambda_handler(event, context):
 		api_url = "https://you-application.com/api"   #change this part to the api url
 		token_url = api_url + "/your/token/path/here"    # this is to get the token, this part needs to be modified according to the api document
 		#change the token request json file if different, the type of it is dict, by default python 3 cannot convert byte to json
-    token_request = {
+		token_request = {
 			"grant_type": "client_credentials",
 			"scope": "app",
 			"domain_id": "your_domain",
