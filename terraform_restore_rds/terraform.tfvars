@@ -1,9 +1,0 @@
-region                = "cn-north-1"
-copy_tags_to_snapshot = "true"
-db_subnet_group_name  = "db-test-idq-db"
-snapshot_identifier   = "rdsSnapshot-20190801"
-identifier            = "rdsname"
-instance_class        = "db.m4.xlarge"
-port                  = "5432"
-publicly_accessible   = "false"
-vpc_security_group_ids = ["sg-1aa2bb3cc4dd", "sg-2aa3bb4dd"]
