@@ -1,0 +1,15 @@
+provider "aws" {
+  region     = "cn-north-1"
+}
+resource "aws_s3_bucket" "b" {
+  bucket = "my-tf-test-bucket-1"
+  acl    = "private"
+
+  tags = {
+    Name        = "My bucket"
+    Environment = "Dev"
+  }
+}
+output "s3endpoint" {
+  value = aws_s3_bucket.b.website_endpoint
+}
