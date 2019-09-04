@@ -10,6 +10,6 @@ resource "aws_s3_bucket" "b" {
     Environment = "Dev"
   }
 }
-output "s3endpoint" {
-  value = aws_s3_bucket.b.website_endpoint
+output "s3name" {
+  value = aws_s3_bucket.b.bucket
 }
