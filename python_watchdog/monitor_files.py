@@ -12,7 +12,7 @@ if __name__ == "__main__":
                         format='%(asctime)s - %(message)s',
                         datefmt='%Y-%m-%d %H:%M:%S')
     #path = sys.argv[1] if len(sys.argv) > 1 else '.'
-    # you can read the destination file from parameters or define your own destination
+    # you can read the destination file/derectory from parameters or define your own destination
     path = "/interfaces"
     event_handler = LoggingEventHandler()
     observer = Observer()
