@@ -1,7 +1,7 @@
 Before using watchdog, you need to install it.
 ref: https://github.com/gorakhargosh/watchdog/
 
-After finished the script, if you'd like to cotinueously monitor, you can make the script auto start when restart the server. 
+If you'd like to cotinueously monitor, you can make the script auto start when restart the server. 
 I've configured a systemd job.
 
 1)cd /etc/systemd/system
