@@ -5,7 +5,7 @@ import grp
 import pwd
 
 '''
-用python实现命令 dir -l
+用python实现和命令 dir -l 的相同输出
 $ python dir.py
 -rw-r--r-- 1 ec2-user users 1320 Oct 16 17:06 test.py
 drwxr-xr-x 2 ec2-user users 4096 Sep 21 22:07 bin
@@ -42,5 +42,4 @@ if __name__ == '__main__':
     path = '.'
     files = [x for x in os.listdir(path) if not x.startswith('.')]
     for file in files:
-        print(file.fsize)
         print(Info(file))
