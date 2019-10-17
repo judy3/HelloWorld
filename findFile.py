@@ -9,7 +9,7 @@ def findFile(str, path = '.'):
         sub_path = os.path.join(path, x)
         if os.path.isdir(sub_path):
             findFile(str, sub_path)
-        if str in x and os.path.isfile(x):
+        elif str in x:
             print(sub_path)
 
 findFile('judy', '.')
