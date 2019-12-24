@@ -15,6 +15,7 @@ def lambda_handler(event, context):
         db_status = db['DBInstanceStatus']
         db_identifier = db['DBInstanceIdentifier']
         for tag in db_tags:
+            # It checks the tags of the DB instance. If there's a tag AUTOOFF is TRUE and the db status is stopped, the DB will start
             if tag['Key'] == 'AUTOOFF' and tag['Value'] == 'TRUE' and db_status == 'stopped':
                 print("%s will start now." % db_identifier )
                 rds_client.start_db_instance(DBInstanceIdentifier=db_identifier)
